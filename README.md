@@ -4,7 +4,11 @@
 
 ## 在线部署
 
-本目录用于 GitHub Pages 公网发布。入口文件为 `index.html`，页面资源位于 `assets/`。
+公网地址：<https://shakeshake666.github.io/huanglou-tu/>
+
+GitHub 仓库：<https://github.com/shakeshake666/huanglou-tu>
+
+本目录通过 GitHub Pages 从 `main` 分支根目录发布。入口文件为 `index.html`，页面资源位于 `assets/`。
 
 ## 运行方式
 
