@@ -2000,10 +2000,8 @@ const App = {
             document.getElementById('bg-img-2').style.opacity = 1;
         }, 4000);
 
-        const textZh = "宋神宗熙宁十年（1077年），黄河决口，洪水逼近徐州。时任徐州知州的苏轼带领军民抵御洪水，保住了城池。
-洪水退后，苏轼于城东门建楼，外墙涂以黄土，取‘土实胜水’之意，命名‘黄楼’。";
-        const textEn = "In 1077, the tenth year of the Xining reign under Emperor Shenzong of Song, the Yellow River breached its dikes, and floodwaters advanced towards Xuzhou. Su Shi, then prefect of Xuzhou, led soldiers and residents in defending the city.
-After the waters receded, Su Shi built a tower at the city’s eastern gate and plastered it with yellow earth. Drawing on the Five Phases principle that ‘earth overcomes water’, he named it Huanglou—the Yellow Tower.";
+        const textZh = "宋神宗熙宁十年（1077年），黄河决口，洪水逼近徐州。时任徐州知州的苏轼带领军民抵御洪水，保住了城池。\n洪水退后，苏轼于城东门建楼，外墙涂以黄土，取‘土实胜水’之意，命名‘黄楼’。";
+        const textEn = "In 1077, the tenth year of the Xining reign under Emperor Shenzong of Song, the Yellow River breached its dikes, and floodwaters advanced towards Xuzhou. Su Shi, then prefect of Xuzhou, led soldiers and residents in defending the city.\nAfter the waters receded, Su Shi built a tower at the city’s eastern gate and plastered it with yellow earth. Drawing on the Five Phases principle that ‘earth overcomes water’, he named it Huanglou—the Yellow Tower.";
         this.typeBilingualSynchronized(
             document.getElementById('intro-text'),
             document.getElementById('intro-text-en'),
@@ -2513,10 +2511,7 @@ After the waters receded, Su Shi built a tower at the city’s eastern gate and 
         const probe = document.createElement('div');
         probe.innerHTML = String(value).replace(/\|/g, '<br>');
         return (probe.innerText || probe.textContent || '')
-            .replace(/
-{3,}/g, '
-
-')
+            .replace(/\n{3,}/g, '\n\n')
             .trim();
     },
 
@@ -2526,8 +2521,7 @@ After the waters receded, Su Shi built a tower at the city’s eastern gate and 
         enElement.innerHTML = '';
         const appendUntil = (element, text, start, end) => {
             for (let index = start; index < end; index++) {
-                if (text[index] === '
-' || text[index] === '|') {
+                if (text[index] === '\n' || text[index] === '|') {
                     element.appendChild(document.createElement('br'));
                     continue;
                 }
